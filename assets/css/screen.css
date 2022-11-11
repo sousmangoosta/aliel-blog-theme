@@ -82,8 +82,12 @@ production stylesheet in assets/built/screen.css
 /* Centered content container blocks */
 .inner {
     margin: 0 auto;
-    max-width: 1200px;
-    width: 100%;
+    max-width: 1120px;
+    padding: 0 4vw;
+}
+
+:is(.home-template) .site-main {
+    padding: 4vw 0;
 }
 
 
@@ -92,7 +96,8 @@ production stylesheet in assets/built/screen.css
 
 .site-header {
     position: relative;
-    color: #fff;
+    /*color: #fff;*/
+    color: #000000;
     background: var(--ghost-accent-color);
 }
 
@@ -111,17 +116,21 @@ production stylesheet in assets/built/screen.css
     position: relative;
     z-index: 100;
     display: flex;
-    align-items: center;
-    padding-top: calc(19vmin + 44px);
-    padding-bottom: 19vmin;
+    /*align-items: center;*/
+    /*padding-top: calc(19vmin + 44px);*/
+    /*padding-bottom: 19vmin;*/
+    padding-bottom: 6vmin;
     text-align: center;
-    color: var(--color-darkgrey);
+    /*color: var(--color-darkgrey);*/
+    color: #000000;
 }
 
 .has-cover .site-header-content {
-    min-height: 560px;
+    /*min-height: 560px;*/
     background-color: var(--ghost-accent-color);
-    color: #fff;
+    /*color: #fff;*/
+    color: #000000;
+    box-shadow: rgba(0,0,0,.05) 0 4px 12px 0;
 }
 
 .site-header-content.left-aligned {
@@ -186,9 +195,11 @@ production stylesheet in assets/built/screen.css
     display: inline-block;
     z-index: 10;
     max-width: 960px;
-    font-size: 6rem;
-    font-weight: 700;
-    line-height: 1.1;
+    font-size: 2.4rem;
+    /*font-weight: 700;*/
+    line-height: 1.3em;
+    margin-top: 64px;
+    opacity: 0.7;
 }
 
 :is(.site-logo, .site-title) + .site-description {
@@ -202,12 +213,14 @@ production stylesheet in assets/built/screen.css
 }
 
 .site-title + .site-description {
-    color: var(--color-secondary-text);
+    /*color: var(--color-secondary-text);*/
+    color: #000000;
 }
 
 .has-cover .site-description {
     letter-spacing: -0.005em;
-    color: #fff;
+    /*color: #fff;*/
+    color: #000000;
 }
 
 .has-cover :is(.site-logo, .site-title) + .site-description {
@@ -263,11 +276,17 @@ production stylesheet in assets/built/screen.css
     font-size: 1.6rem;
     line-height: 1.3em;
     background-color: #fff;
+    opacity: 0.7;
+    /*box-shadow: rgba(0,0,0,.05) 0 4px 12px 0;*/
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .has-cover:not(.home-template) .gh-head {
     background-color: var(--ghost-accent-color);
-    color: #fff;
+    /*color: #fff;*/
+    color: #000000;
+    box-shadow: rgba(0,0,0,.05) 0 4px 12px 0;
 }
 
 .home-template.has-cover .gh-head {
@@ -277,7 +296,8 @@ production stylesheet in assets/built/screen.css
     left: 0;
     z-index: 2000;
     background-color: transparent;
-    color: #fff;
+    /*color: #fff;*/
+    color: #000000;
 }
 
 .gh-head a {
@@ -417,7 +437,8 @@ production stylesheet in assets/built/screen.css
 }
 
 .has-cover .gh-head-logo {
-    color: #fff;
+    /*color: #fff;*/
+    color: #000000;
 }
 
 .gh-head-logo img {
@@ -577,12 +598,14 @@ production stylesheet in assets/built/screen.css
     letter-spacing: -0.005em;
     font-size: 1.6rem;
     border-radius: 48px;
-    color: #fff;
+    /*color: #fff;*/
+    color: #000000;
     background: var(--ghost-accent-color);
 }
 
 .has-cover .gh-head-button {
-    color: var(--color-darkgrey);
+    /*color: var(--color-darkgrey);*/
+    color: #000000;
     background: #fff;
 }
 
@@ -812,11 +835,14 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 
 .post-feed {
-    position: relative;
+    /*position: relative;*/
     display: grid;
-    gap: 4.8vmin 4vmin;
+    /*gap: 4.8vmin 4vmin;
     grid-template-columns: repeat(6, 1fr);
-    padding: max(4.8vmin, 36px) 0 0;
+    padding: max(4.8vmin, 36px) 0 0;*/
+    justify-content: space-between;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 :is(.tag-template, .author-template) .post-feed {
@@ -837,25 +863,25 @@ production stylesheet in assets/built/screen.css
 }
 
 .post-card {
-    position: relative;
+    /*position: relative;
     grid-column: span 2;
     display: flex;
     flex-direction: column;
     background-size: cover;
-    word-break: break-word;
+    word-break: break-word;*/
+    color: inherit;
+    text-decoration: none;
 }
 
 .post-card-image-link {
-    position: relative;
-    overflow: hidden;
-    display: block;
-    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
 }
 
 .post-card-image-link::after {
     content: "";
     display: block;
-    padding-bottom: 55%;
+    /*padding-bottom: 55%;*/
 }
 
 .post-card[class*="post-access-"] .post-card-image-link::after {
@@ -874,12 +900,11 @@ production stylesheet in assets/built/screen.css
 }
 
 .post-card-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--color-lightgrey) no-repeat center center;
+    width: auto;
+    height: 200px;
     object-fit: cover;
+    border: 1px solid rgba(0,0,0,.125);
+    margin: 0 0 10px 0;
 }
 
 .post-card.keep-ratio:not(.post-card-large):not(.post-card-full) .post-card-image {
@@ -921,7 +946,7 @@ production stylesheet in assets/built/screen.css
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: 0 0 10px;
+    margin: 0 0 5px;
     color: var(--color-secondary-text);
     font-size: 1.4rem;
     font-weight: 600;
@@ -945,9 +970,9 @@ production stylesheet in assets/built/screen.css
 
 .post-card-title {
     margin: 0;
-    font-size: 2.6rem;
-    font-weight: 800;
-    line-height: 1.2;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.15;
 }
 
 .post-card-content-link:hover .post-card-title {
@@ -984,15 +1009,16 @@ production stylesheet in assets/built/screen.css
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     word-break: break-word;
+    color: #3c484e;
 }
 
 .has-sans-body .post-card-excerpt {
     font-family: var(--font-sans);
 }
 
-.post-card:not(.post-card-large):not(.post-card-full):not(.dynamic):not(.no-image) .post-card-excerpt {
+/*.post-card:not(.post-card-large):not(.post-card-full):not(.dynamic):not(.no-image) .post-card-excerpt {
     -webkit-line-clamp: 2;
-}
+}*/
 
 :is(.tag-template, .author-template) .post-card-excerpt {
     margin-top: 6px;
@@ -1177,11 +1203,12 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .article-title {
-    margin-bottom: 0;
+    /*margin-bottom: 0;
     font-size: clamp(3.2rem, 5vw, 5.2rem);
     font-weight: 800;
     line-height: 1.05;
-    color: var(--color-darkgrey);
+    color: var(--color-darkgrey);*/
+    font-size: 4rem;
 }
 
 .has-serif-title .article-title {
@@ -1294,6 +1321,7 @@ headings, text, images and lists. We deal with cards lower down. */
 is the very first element in the post content */
 .gh-content > [id]:not(:first-child) {
     margin: 2em 0 0;
+    font-size: 3.4rem;
 }
 
 /* Add a small margin between a heading and anything after it */
@@ -1675,6 +1703,12 @@ iframe.instagram-media + script + :not([id]) {
     background-color: var(--color-border);
 }
 
+.static-avatar {
+    height: 30px;
+    width: 30px;
+    display: flex;
+}
+
 .page-template .article-title {
     margin-bottom: 0;
 }
@@ -1955,9 +1989,9 @@ iframe.instagram-media + script + :not([id]) {
 
 .site-footer {
     position: relative;
-    margin: max(12vmin, 64px) 0 0 0;
-    padding-top: 48px;
-    padding-bottom: 140px;
+    /*margin: max(12vmin, 64px) 0 0 0;*/
+    padding-top: 20px;
+    padding-bottom: 20px;
     color: #fff;
     background: color-mod(var(--color-darkgrey) l(-5%));
 }

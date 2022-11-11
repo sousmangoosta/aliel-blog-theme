@@ -25,11 +25,11 @@
         <div class="gh-head-inner inner">
             <div class="gh-head-brand">
                 <a class="gh-head-logo" href="{{@site.url}}">
-                    {{#if @site.logo}}
+                    {{!--{{#if @site.logo}}
                         <img src="{{@site.logo}}" alt="{{@site.title}}">
                     {{else}}
                         {{@site.title}}
-                    {{/if}}
+                    {{/if}}--}}
                 </a>
                 <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
                 <button class="gh-burger"></button>
@@ -61,6 +61,10 @@
                         <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
                     {{/unless}}
                 {{/unless}}
+                {{#if @site.twitter}}
+                    <a class="author-profile-social-link" href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+                {{/if}}
+                <a class="author-profile-social-link" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/feed.xml" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
             </div>
         </div>
     </header>
